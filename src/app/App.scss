@@ -1,38 +1,137 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+$black: #000000;
+$white: #ffffff;
+$desktop: 768px;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@mixin container {
+  padding: 20px 40px;
+
+  @media (min-width: $desktop) {
+    padding: 90px 60px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+html,
+body {
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+.app {
+  @include container();
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-width: 320px;
+  min-height: 100vh;
+  max-width: $desktop;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f7f4;
+  box-shadow: 0 5px 15px 0 rgba($black, 0.2);
 }
 
-.App-link {
-  color: #61dafb;
+.status-bar {
+  display: flex;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.question-title {
+  // font-size: 24px;
+  font-weight: 600;
+}
+
+.question-description {
+  // font-size: 15px;
+}
+
+.options-list {
+  @include list-reset();
+  // font-size: 15px;
+  width: 100%;
+
+  &.checkbox {
+    font-weight: 600;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.options-item {
+  border-bottom: 1px solid rgba(#286eff, 0.1);
+
+  & label {
+    position: relative;
+    display: block;
+    padding: 10px 0;
+    cursor: pointer;
+    user-select: none;
+  }
+}
+
+.options-input {
+  &:hover + label,
+  &:checked + label {
+    color: #286eff;
+  }
+}
+
+.options-input-checkbox {
+  & + label {
+    padding-left: 36px;
+  }
+
+  & + label::before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 21px;
+    height: 21px;
+    border: 1px solid #d0dfff;
+    border-radius: 7px;
+    background: $white;
+    outline: none;
+  }
+
+  &:hover + label::before,
+  &:focus + label::before {
+    border-color: #4380ff;
+  }
+
+  &:checked + label::before {
+    background-color: #4380ff;
+    border-color: #4380ff;
+  }
+
+  &:checked + label::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 8px;
+    width: 5px;
+    height: 9px;
+    border: 2px solid $white;
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(40deg);
   }
 }

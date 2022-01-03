@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import QuestionOptions from '../components/QuestionOptions';
 
 const Questions = () => {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+
   const questions = [
     {
       id: 1,
@@ -55,7 +58,7 @@ const Questions = () => {
           text: 'Next question'
         }
       ],
-      type: 'button'
+      type: 'radio'
     },
     {
       id: 3,
@@ -66,7 +69,7 @@ const Questions = () => {
           text: 'Next question'
         }
       ],
-      type: 'button'
+      type: 'radio'
     },
     {
       id: 4,
@@ -77,7 +80,7 @@ const Questions = () => {
           text: 'Next question'
         }
       ],
-      type: 'button'
+      type: 'radio'
     },
     {
       id: 5,
@@ -88,7 +91,7 @@ const Questions = () => {
           text: 'Next question'
         }
       ],
-      type: 'button'
+      type: 'radio'
     },
     {
       id: 6,
@@ -99,7 +102,7 @@ const Questions = () => {
           text: 'Next question'
         }
       ],
-      type: 'button'
+      type: 'radio'
     },
     {
       id: 7,
@@ -122,7 +125,7 @@ const Questions = () => {
           text: "I don't know"
         }
       ],
-      type: 'button'
+      type: 'radio'
     },
     {
       id: 8,
@@ -150,7 +153,7 @@ const Questions = () => {
           symbol: '🤩'
         }
       ],
-      type: 'button'
+      type: 'radio'
     },
     {
       id: 9,
@@ -175,7 +178,7 @@ const Questions = () => {
           textOf: 'day'
         }
       ],
-      type: 'button'
+      type: 'radio'
     },
     {
       id: 10,
@@ -186,7 +189,7 @@ const Questions = () => {
           text: 'Next question'
         }
       ],
-      type: 'button'
+      type: 'radio'
     },
     {
       id: 11,
@@ -197,7 +200,7 @@ const Questions = () => {
           text: 'Next question'
         }
       ],
-      type: 'button'
+      type: 'radio'
     },
     {
       id: 12,
@@ -229,40 +232,40 @@ const Questions = () => {
           text: 'Nail biting'
         }
       ],
-      type: 'circle'
+      type: 'checkbox'
     }
   ];
 
+  const handleNextQuestion = () => {
+    const nextQuestion = currentQuestion + 1;
+
+    if (nextQuestion < questions.length) {
+      setCurrentQuestion(nextQuestion);
+    }
+  };
+
+  const question = questions[currentQuestion];
+
   return (
     <>
-      {questions.map((question) => (
-        <>
-          <h1>{question.title}</h1>
-          {question.description && <p>{question.description}</p>}
-          <ul>
-            {question.options.map((option) => (
-              <li>
-                {option.symbol && (
-                  <>
-                    <span role="img" aria-label={option.label}>
-                      {option.symbol}
-                    </span>{' '}
-                  </>
-                )}
-                {}
-                {option.textOf ? (
-                  <>
-                    <span>{option.text}</span>
-                    {option.textOf}
-                  </>
-                ) : (
-                  <>{option.text}</>
-                )}
-              </li>
-            ))}
-          </ul>
-        </>
-      ))}
+      <div className="status-bar">
+        <span>Previous step</span>
+        <span>
+          {currentQuestion + 1}/{questions.length}
+        </span>
+      </div>
+      <h1 className="question-title">{question.title}</h1>
+      {question.description && (
+        <p className="question-description">{question.description}</p>
+      )}
+      <QuestionOptions
+        options={question.options}
+        type={question.type}
+        name={question.name}
+      />
+      {question.type === 'checkbox' ? (
+        <button onClick={() => handleNextQuestion()}>Next</button>
+      ) : null}
     </>
   );
 };

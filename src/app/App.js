@@ -4,7 +4,7 @@ import Questions from './layouts/Questions';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Questions />
     </div>
   );
