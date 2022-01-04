@@ -51,6 +51,54 @@ body {
   box-shadow: 0 5px 15px 0 rgba($black, 0.2);
 }
 
+.button {
+  display: inline-block;
+  max-width: 320px;
+  margin: 10px 0;
+  padding: 10px 30px;
+  font: inherit;
+  text-align: center;
+  color: $white;
+  vertical-align: middle;
+  background-color: #4380ff;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 2px 5px 10px rgba(#6d62e5, 0.2);
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  &:active {
+    opacity: 0.75;
+  }
+
+  &:focus {
+    outline: 1px dotted #d0dfff;
+    outline-offset: -3px;
+  }
+
+  &.disabled,
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  &-blue {
+    background-color: #4380ff;
+  }
+
+  &-green {
+    background-color: #13c962;
+  }
+
+  &-orange {
+    background-color: #ff6e41;
+  }
+}
+
 .status-bar {
   display: flex;
   justify-content: space-between;
@@ -120,6 +168,10 @@ body {
   &:checked + label::before {
     background-color: #4380ff;
     border-color: #4380ff;
+  }
+
+  &:checked:focus + label::before {
+    border-color: #d0dfff;
   }
 
   &:checked + label::after {

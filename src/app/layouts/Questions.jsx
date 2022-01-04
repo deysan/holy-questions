@@ -263,9 +263,14 @@ const Questions = () => {
         type={question.type}
         name={question.name}
       />
-      {question.type === 'checkbox' ? (
-        <button onClick={() => handleNextQuestion()}>Next</button>
-      ) : null}
+      {/* {question.type === 'checkbox' ? ( */}
+      <button
+        className="button button-blue"
+        onClick={() => handleNextQuestion()}
+      >
+        Next
+      </button>
+      {/* ) : null} */}
     </>
   );
 };
