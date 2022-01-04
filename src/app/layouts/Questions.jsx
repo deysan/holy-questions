@@ -250,7 +250,7 @@ const Questions = () => {
   return (
     <>
       <div className="status-bar">
-        <span>Previous step</span>
+        <span className="previous">Previous step</span>
         <span>
           {currentQuestion + 1}/{questions.length}
         </span>
