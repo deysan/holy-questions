@@ -6,7 +6,7 @@ const QuestionButton = ({ handleNextQuestion }) => {
       {/* {question.type === 'checkbox' && ( */}
       <button
         className="button button-blue"
-        // onClick={() => handleNextQuestion()}
+        onClick={() => handleNextQuestion()}
       >
         Next
       </button>

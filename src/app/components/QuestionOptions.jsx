@@ -1,4 +1,5 @@
 import React from 'react';
+import Emoji from './Emoji';
 
 const QuestionOptions = ({ options, type, specialType, id }) => {
   return (
@@ -22,13 +23,7 @@ const QuestionOptions = ({ options, type, specialType, id }) => {
             }
           />
           <label htmlFor={`option${index}`}>
-            {option.icon && (
-              <>
-                <span role="img" aria-label={option.label}>
-                  {option.icon}
-                </span>{' '}
-              </>
-            )}
+            {option.icon && <Emoji label={option.label} icon={option.icon} />}
             {option.textOf ? (
               <>
                 <span>{option.text} / </span>
