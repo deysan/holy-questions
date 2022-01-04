@@ -1,6 +1,6 @@
 import './App.scss';
 import React from 'react';
-import Questions from './layouts/Questions';
+import Questions from './layouts/questions';
 
 function App() {
   return (
