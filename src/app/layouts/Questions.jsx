@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import QuestionOptions from '../components/questionOptions';
 import { useSelector } from 'react-redux';
+import QuestionTitle from '../components/QuestionTitle';
+import QuestionOptions from '../components/QuestionOptions';
+import QuestionButton from '../components/QuestionButton';
+import QuestionStatus from '../components/QuestionStatus';
 
 const Questions = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -25,36 +28,21 @@ const Questions = () => {
   const question = questions[currentQuestion];
 
   return (
-    <>
-      <div className="status-bar">
-        <span className="status-questions">
-          {currentQuestion + 1}/{questions.length}
-        </span>
-        {currentQuestion > 0 && (
-          <span className="previous" onClick={() => handlePrevQuestion()}>
-            Previous step
-          </span>
-        )}
-      </div>
-      <h1 className="question-title">{question.title}</h1>
-      {question.description && (
-        <p className="question-description">{question.description}</p>
-      )}
+    <div className="question-page">
+      <QuestionStatus
+        questions={questions}
+        currentQuestion={currentQuestion}
+        handlePrevQuestion={handlePrevQuestion}
+      />
+      <QuestionTitle question={question} />
       <QuestionOptions
         options={question.options}
         type={question.type}
         specialType={question?.specialType}
         id={currentQuestion}
       />
-      {/* {question.type === 'checkbox' ? ( */}
-      <button
-        className="button button-blue"
-        onClick={() => handleNextQuestion()}
-      >
-        Next
-      </button>
-      {/* ) : null} */}
-    </>
+      <QuestionButton handleNextQuestion={handleNextQuestion} />
+    </div>
   );
 };
 

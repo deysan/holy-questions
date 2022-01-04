@@ -1,13 +1,9 @@
 import './App.scss';
 import React from 'react';
-import Questions from './layouts/questions';
+import Questions from './layouts/Questions';
 
 function App() {
-  return (
-    <div className="app">
-      <Questions />
-    </div>
-  );
+  return <Questions />;
 }
 
 export default App;
