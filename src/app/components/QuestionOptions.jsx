@@ -17,9 +17,8 @@ const QuestionOptions = ({ options, type, specialType, id }) => {
             }
             type={type}
             value={
-              type === 'radio'
-                ? `${option.text.toLowerCase().split(' ').join('-')}`
-                : null
+              type === 'radio' &&
+              `${option.text.toLowerCase().split(' ').join('-')}`
             }
           />
           <label htmlFor={`option${index}`}>

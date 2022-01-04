@@ -245,15 +245,27 @@ const Questions = () => {
     }
   };
 
+  const handlePreviousQuestion = () => {
+    const previousQuestion = currentQuestion - 1;
+
+    if (previousQuestion >= 0) {
+      setCurrentQuestion(previousQuestion);
+    }
+  };
+
   const question = questions[currentQuestion];
 
   return (
     <>
       <div className="status-bar">
-        <span className="previous">Previous step</span>
-        <span>
+        <span className="status-questions">
           {currentQuestion + 1}/{questions.length}
         </span>
+        {currentQuestion > 0 && (
+          <span className="previous" onClick={() => handlePreviousQuestion()}>
+            Previous step
+          </span>
+        )}
       </div>
       <h1 className="question-title">{question.title}</h1>
       {question.description && (

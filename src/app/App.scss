@@ -111,6 +111,7 @@ body {
 .status-bar {
   display: flex;
   justify-content: space-between;
+  flex-direction: row-reverse;
   font-size: 14px;
   color: rgba($dark, 0.6);
 }
@@ -157,11 +158,13 @@ body {
   margin-top: 10px;
 
   &.checkbox {
+    margin-bottom: 10px;
     font-weight: 600;
     & > .options-item {
       border-bottom: 1px solid rgba($color-blue, 0.1);
     }
   }
+
   &.bubble {
     display: flex;
     flex-wrap: wrap;
@@ -255,7 +258,7 @@ body {
 
 .options-input-bubble {
   & + label {
-    margin: 10px;
+    margin-right: 10px;
     width: 100px;
     height: 100px;
 
