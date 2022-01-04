@@ -14,37 +14,37 @@ const Questions = () => {
         {
           text: 'Perform cleaning',
           label: 'sponge',
-          symbol: '🧽'
+          icon: '🧽'
         },
         {
           text: 'Keep mental health',
           label: 'relieved_face',
-          symbol: '😌'
+          icon: '😌'
         },
         {
           text: 'Be productive',
           label: 'stopwatch',
-          symbol: '⏱️'
+          icon: '⏱️'
         },
         {
           text: 'Set useful nutrition',
           label: 'green_salad',
-          symbol: '🥗'
+          icon: '🥗'
         },
         {
           text: 'Love & be loved',
           label: 'smiling_face_with_hearts',
-          symbol: '🥰'
+          icon: '🥰'
         },
         {
           text: 'Have a healthy body',
           label: 'flexed_biceps',
-          symbol: '💪'
+          icon: '💪'
         },
         {
           text: 'Bring self-care into life',
           label: 'person_tipping_hand',
-          symbol: '💁'
+          icon: '💁'
         }
       ],
       type: 'checkbox'
@@ -135,22 +135,22 @@ const Questions = () => {
         {
           text: 'More focus',
           label: 'nerd_face',
-          symbol: '🤓'
+          icon: '🤓'
         },
         {
           text: 'More strength',
           label: 'smirking_face',
-          symbol: '😏'
+          icon: '😏'
         },
         {
           text: 'More calm',
           label: 'relieved_face',
-          symbol: '😌'
+          icon: '😌'
         },
         {
           text: 'More energy',
           label: 'star_struck',
-          symbol: '🤩'
+          icon: '🤩'
         }
       ],
       type: 'radio'
@@ -162,19 +162,19 @@ const Questions = () => {
         'How much time do you want to spend on self-development every day?',
       options: [
         {
-          text: '5 min / ',
+          text: '5 min',
           textOf: 'day'
         },
         {
-          text: '10 min / ',
+          text: '10 min',
           textOf: 'day'
         },
         {
-          text: '15 min / ',
+          text: '15 min',
           textOf: 'day'
         },
         {
-          text: '20+ min / ',
+          text: '20+ min',
           textOf: 'day'
         }
       ],
@@ -232,7 +232,8 @@ const Questions = () => {
           text: 'Nail biting'
         }
       ],
-      type: 'checkbox'
+      type: 'checkbox',
+      specialType: 'bubble'
     }
   ];
 
@@ -261,7 +262,8 @@ const Questions = () => {
       <QuestionOptions
         options={question.options}
         type={question.type}
-        name={question.name}
+        specialType={question?.specialType}
+        id={currentQuestion}
       />
       {/* {question.type === 'checkbox' ? ( */}
       <button
