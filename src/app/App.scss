@@ -59,13 +59,12 @@ body {
 
 .button {
   display: inline-block;
-  max-width: 100%;
+  width: 100%;
   margin: 10px 0;
   padding: 10px 30px;
   font: inherit;
   text-align: center;
   color: $white;
-  vertical-align: middle;
   background-color: $color-blue;
   border: none;
   border-radius: 25px;
@@ -86,8 +85,7 @@ body {
   }
 
   &:focus {
-    outline: 1px dashed $color-outline;
-    outline-offset: -3px;
+    outline: none;
   }
 
   &.disabled,
@@ -183,6 +181,14 @@ body {
     cursor: pointer;
     user-select: none;
   }
+
+  &-bold {
+    font-weight: 600;
+  }
+
+  &-color {
+    color: $color-blue;
+  }
 }
 
 .options-input-checkbox {
@@ -208,8 +214,7 @@ body {
     color: $color-blue;
   }
 
-  &:hover + label::before,
-  &:focus + label::before {
+  &:hover + label::before {
     border-color: $color-blue;
   }
 
@@ -218,7 +223,7 @@ body {
     border-color: $color-blue;
   }
 
-  &:checked:focus + label::before {
+  &:checked:hover + label::before {
     border-color: $color-outline;
   }
 
@@ -245,13 +250,17 @@ body {
     border-radius: 13px;
   }
 
-  &:hover + label,
   &:checked + label {
     background-color: #f1f6ff;
     box-shadow: inset 0px 0px 0px 2px $color-blue;
   }
 
-  &:focus + label {
+  &:hover + label {
+    padding: 18px;
+    border: 2px dashed $color-blue;
+  }
+
+  &:checked:hover + label {
     padding: 19px;
     border: 1px dashed $color-blue;
   }

@@ -360,20 +360,34 @@ const quizSlice = createSlice({
   reducers: {
     toggleChecked(state, action) {
       const findQuestion = state.questions.find(
-        (question) => question.id === action.payload.id
+        (question) => question.id === action.payload.questionId
       );
 
-      const toggleOption = findQuestion.options[action.payload.index];
+      const toggleOption = findQuestion.options[action.payload.optionIndex];
 
       if (findQuestion.type === 'radio') {
         findQuestion.options.map((option) => (option.checked = false));
       }
 
       toggleOption.checked = !toggleOption.checked;
+    },
+    nextQuestion(state) {
+      const nextQuestion = state.currentQuestion + 1;
+
+      if (nextQuestion < state.questions.length) {
+        state.currentQuestion = nextQuestion;
+      }
+    },
+    prevQuestion(state) {
+      const prevQuestion = state.currentQuestion - 1;
+
+      if (prevQuestion >= 0) {
+        state.currentQuestion = prevQuestion;
+      }
     }
   }
 });
 
-export const { toggleChecked } = quizSlice.actions;
+export const { toggleChecked, nextQuestion, prevQuestion } = quizSlice.actions;
 
 export default quizSlice.reducer;

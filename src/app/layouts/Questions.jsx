@@ -1,50 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import Title from '../components/Title';
-import FormOptions from '../components/FormOptions';
+import OptionsList from '../components/OptionsList';
 import Status from '../components/Status';
 
 const Questions = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
   const questions = useSelector((state) => state.quiz.questions);
-
-  const handleNextQuestion = () => {
-    const nextQuestion = currentQuestion + 1;
-
-    if (nextQuestion < questions.length) {
-      setCurrentQuestion(nextQuestion);
-    }
-  };
-
-  const handlePrevQuestion = () => {
-    const prevQuestion = currentQuestion - 1;
-
-    if (prevQuestion >= 0) {
-      setCurrentQuestion(prevQuestion);
-    }
-  };
-
-  const formPreventDefault = (event) => {
-    event.preventDefault();
-  };
+  const currentQuestion = useSelector((state) => state.quiz.currentQuestion);
 
   const question = questions[currentQuestion];
 
   return (
     <div className="question-page">
       <Status
-        questions={questions}
         currentQuestion={currentQuestion}
-        handlePrevQuestion={handlePrevQuestion}
+        allQuestions={questions.length}
       />
-      <Title question={question} />
-      <FormOptions
-        options={question.options}
-        type={question.type}
-        specialType={question?.specialType}
-        id={currentQuestion + 1}
-        handleNextQuestion={handleNextQuestion}
-        formPreventDefault={formPreventDefault}
+      <Title
+        questionTitle={question.title}
+        questionDescription={question.description}
+      />
+      <OptionsList
+        questionId={question.id}
+        optionsList={question.options}
+        optionsType={question.type}
+        specialType={question.specialType}
       />
     </div>
   );

@@ -1,40 +1,46 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { toggleChecked } from '../store/quizSlice';
+import { nextQuestion, toggleChecked } from '../store/quizSlice';
 import Emoji from './Emoji';
 
-const OptionItem = ({ id, type, specialType, option, index }) => {
+const OptionItem = ({
+  questionId,
+  optionsType,
+  specialType,
+  optionItem,
+  optionIndex
+}) => {
   const dispatch = useDispatch();
 
+  const optionName = optionItem.text.toLowerCase().split(' ').join('-');
+
   return (
-    <li key={index} className="options-item">
+    <li key={optionIndex} className="options-item">
       <input
-        id={`question${id}-option${index}`}
+        id={`question${questionId}-option${optionIndex}`}
         className={`options-input options-input-${
-          specialType || type
+          specialType || optionsType
         } visually-hidden`}
-        name={
-          type === 'checkbox'
-            ? `${option.text.toLowerCase().split(' ').join('-')}`
-            : `question${id}`
-        }
-        type={type}
-        value={
-          type === 'radio' &&
-          `${option.text.toLowerCase().split(' ').join('-')}`
-        }
-        checked={option.checked}
-        onChange={() => dispatch(toggleChecked({ id, index }))}
+        name={optionsType === 'checkbox' ? optionName : `question${questionId}`}
+        type={optionsType}
+        value={optionsType === 'radio' && optionName}
+        checked={optionItem.checked}
+        onChange={() => dispatch(toggleChecked({ questionId, optionIndex }))}
+        onClick={() => {
+          optionsType === 'radio' && dispatch(nextQuestion());
+        }}
       />
-      <label htmlFor={`question${id}-option${index}`}>
-        {option.icon && <Emoji label={option.label} icon={option.icon} />}
-        {option.textOf ? (
-          <>
-            <span>{option.text} / </span>
-            {option.textOf}
-          </>
+      <label htmlFor={`question${questionId}-option${optionIndex}`}>
+        {optionItem.icon && (
+          <Emoji label={optionItem.label} icon={optionItem.icon} />
+        )}
+        {optionItem.textOf ? (
+          <span className="options-item-bold">
+            <span className="options-item-color">{optionItem.text} / </span>
+            {optionItem.textOf}
+          </span>
         ) : (
-          <>{option.text}</>
+          <>{optionItem.text}</>
         )}
       </label>
     </li>

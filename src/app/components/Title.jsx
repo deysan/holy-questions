@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Title = ({ question }) => {
+const Title = ({ questionTitle, questionDescription }) => {
   return (
     <>
-      <h1 className="question-title">{question.title}</h1>
-      {question.description && (
-        <p className="question-description">{question.description}</p>
+      <h1 className="question-title">{questionTitle}</h1>
+      {questionDescription && (
+        <p className="question-description">{questionDescription}</p>
       )}
     </>
   );

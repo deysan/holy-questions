@@ -1,13 +1,16 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { nextQuestion } from '../store/quizSlice';
 
-const Button = ({ handleNextQuestion }) => {
+const Button = ({ classButton, typeButton }) => {
+  const dispatch = useDispatch();
+
   return (
     <>
-      {/* {question.type === 'checkbox' && ( */}
       <button
-        className="button button-blue"
-        type="submit"
-        onClick={() => handleNextQuestion()}
+        className={`button ${classButton}`}
+        type={typeButton}
+        onClick={() => dispatch(nextQuestion())}
       >
         Next
       </button>
