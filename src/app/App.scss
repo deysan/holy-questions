@@ -257,12 +257,13 @@ body {
 
   &:hover + label {
     padding: 18px;
+    background-color: #f1f6ff;
     border: 2px dashed $color-blue;
   }
 
   &:checked:hover + label {
     padding: 19px;
-    border: 1px dashed $color-blue;
+    border-width: 1px;
   }
 }
 
