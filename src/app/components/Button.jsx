@@ -1,11 +1,12 @@
 import React from 'react';
 
-const QuestionButton = ({ handleNextQuestion }) => {
+const Button = ({ handleNextQuestion }) => {
   return (
     <>
       {/* {question.type === 'checkbox' && ( */}
       <button
         className="button button-blue"
+        type="submit"
         onClick={() => handleNextQuestion()}
       >
         Next
@@ -14,4 +15,4 @@ const QuestionButton = ({ handleNextQuestion }) => {
   );
 };
 
-export default QuestionButton;
+export default Button;

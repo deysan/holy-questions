@@ -1,6 +1,6 @@
 import React from 'react';
 
-const QuestionTitle = ({ question }) => {
+const Title = ({ question }) => {
   return (
     <>
       <h1 className="question-title">{question.title}</h1>
@@ -11,4 +11,4 @@ const QuestionTitle = ({ question }) => {
   );
 };
 
-export default QuestionTitle;
+export default Title;

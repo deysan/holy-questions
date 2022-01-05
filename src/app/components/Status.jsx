@@ -1,6 +1,6 @@
 import React from 'react';
 
-const QuestionStatus = ({ questions, currentQuestion, handlePrevQuestion }) => {
+const Status = ({ questions, currentQuestion, handlePrevQuestion }) => {
   return (
     <div className="status-bar">
       <span className="status-questions">
@@ -15,4 +15,4 @@ const QuestionStatus = ({ questions, currentQuestion, handlePrevQuestion }) => {
   );
 };
 
-export default QuestionStatus;
+export default Status;

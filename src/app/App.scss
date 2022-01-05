@@ -6,6 +6,7 @@ $color-bg: #f9f7f4;
 $color-blue: #4380ff;
 $color-green: #13c962;
 $color-orange: #ff6e41;
+$color-outline: #d0dfff;
 $desktop: 768px;
 
 @mixin container {
@@ -39,7 +40,6 @@ html,
 body {
   margin: 0 auto;
   background-color: $white;
-  box-sizing: border-box;
 }
 
 .question-page {
@@ -54,6 +54,7 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: $color-bg;
   box-shadow: 0 5px 15px 0 rgba($dark, 0.2);
+  box-sizing: border-box;
 }
 
 .button {
@@ -85,7 +86,7 @@ body {
   }
 
   &:focus {
-    outline: 1px dashed #d0dfff;
+    outline: 1px dashed $color-outline;
     outline-offset: -3px;
   }
 
@@ -196,7 +197,7 @@ body {
     left: 0;
     width: 21px;
     height: 21px;
-    border: 1px solid #d0dfff;
+    border: 1px solid $color-outline;
     border-radius: 7px;
     background: $white;
     outline: none;
@@ -218,7 +219,7 @@ body {
   }
 
   &:checked:focus + label::before {
-    border-color: #d0dfff;
+    border-color: $color-outline;
   }
 
   &:checked + label::after {

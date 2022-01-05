@@ -13,37 +13,44 @@ const quizSlice = createSlice({
           {
             text: 'Perform cleaning',
             label: 'sponge',
-            icon: '🧽'
+            icon: '🧽',
+            checked: false
           },
           {
             text: 'Keep mental health',
             label: 'relieved_face',
-            icon: '😌'
+            icon: '😌',
+            checked: false
           },
           {
             text: 'Be productive',
             label: 'stopwatch',
-            icon: '⏱️'
+            icon: '⏱️',
+            checked: false
           },
           {
             text: 'Set useful nutrition',
             label: 'green_salad',
-            icon: '🥗'
+            icon: '🥗',
+            checked: false
           },
           {
             text: 'Love & be loved',
             label: 'smiling_face_with_hearts',
-            icon: '🥰'
+            icon: '🥰',
+            checked: false
           },
           {
             text: 'Have a healthy body',
             label: 'flexed_biceps',
-            icon: '💪'
+            icon: '💪',
+            checked: false
           },
           {
             text: 'Bring self-care into life',
             label: 'person_tipping_hand',
-            icon: '💁'
+            icon: '💁',
+            checked: false
           }
         ],
         type: 'checkbox'
@@ -54,16 +61,20 @@ const quizSlice = createSlice({
         description: 'Just click "Next"',
         options: [
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           }
         ],
         type: 'radio'
@@ -74,16 +85,20 @@ const quizSlice = createSlice({
         description: 'Just click "Next"',
         options: [
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           }
         ],
         type: 'radio'
@@ -94,16 +109,20 @@ const quizSlice = createSlice({
         description: 'Just click "Next"',
         options: [
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           }
         ],
         type: 'checkbox'
@@ -114,16 +133,20 @@ const quizSlice = createSlice({
         description: 'Just click "Next"',
         options: [
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           }
         ],
         type: 'radio'
@@ -134,16 +157,20 @@ const quizSlice = createSlice({
         description: 'Just click "Next"',
         options: [
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           }
         ],
         type: 'radio'
@@ -155,19 +182,24 @@ const quizSlice = createSlice({
           'This information will help us to give you the best result',
         options: [
           {
-            text: 'Sanguine'
+            text: 'Sanguine',
+            checked: false
           },
           {
-            text: 'Choleric'
+            text: 'Choleric',
+            checked: false
           },
           {
-            text: 'Melancholic'
+            text: 'Melancholic',
+            checked: false
           },
           {
-            text: 'Phlegmatic'
+            text: 'Phlegmatic',
+            checked: false
           },
           {
-            text: "I don't know"
+            text: "I don't know",
+            checked: false
           }
         ],
         type: 'radio'
@@ -180,22 +212,26 @@ const quizSlice = createSlice({
           {
             text: 'More focus',
             label: 'nerd_face',
-            icon: '🤓'
+            icon: '🤓',
+            checked: false
           },
           {
             text: 'More strength',
             label: 'smirking_face',
-            icon: '😏'
+            icon: '😏',
+            checked: false
           },
           {
             text: 'More calm',
             label: 'relieved_face',
-            icon: '😌'
+            icon: '😌',
+            checked: false
           },
           {
             text: 'More energy',
             label: 'star_struck',
-            icon: '🤩'
+            icon: '🤩',
+            checked: false
           }
         ],
         type: 'radio'
@@ -208,19 +244,23 @@ const quizSlice = createSlice({
         options: [
           {
             text: '5 min',
-            textOf: 'day'
+            textOf: 'day',
+            checked: false
           },
           {
             text: '10 min',
-            textOf: 'day'
+            textOf: 'day',
+            checked: false
           },
           {
             text: '15 min',
-            textOf: 'day'
+            textOf: 'day',
+            checked: false
           },
           {
             text: '20+ min',
-            textOf: 'day'
+            textOf: 'day',
+            checked: false
           }
         ],
         type: 'radio'
@@ -231,16 +271,20 @@ const quizSlice = createSlice({
         description: 'Just click "Next"',
         options: [
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           }
         ],
         type: 'radio'
@@ -251,16 +295,20 @@ const quizSlice = createSlice({
         description: 'Just click "Next"',
         options: [
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           },
           {
-            text: 'Next question'
+            text: 'Next question',
+            checked: false
           }
         ],
         type: 'radio'
@@ -271,36 +319,61 @@ const quizSlice = createSlice({
         description: null,
         options: [
           {
-            text: 'Procrastination'
+            text: 'Procrastination',
+            checked: false
           },
           {
-            text: 'Drinking'
+            text: 'Drinking',
+            checked: false
           },
           {
-            text: 'Social media'
+            text: 'Social media',
+            checked: false
           },
           {
-            text: 'Fast food'
+            text: 'Fast food',
+            checked: false
           },
           {
-            text: 'Doubting yourself'
+            text: 'Doubting yourself',
+            checked: false
           },
           {
-            text: 'Smoking'
+            text: 'Smoking',
+            checked: false
           },
           {
-            text: 'Lack of sleep'
+            text: 'Lack of sleep',
+            checked: false
           },
           {
-            text: 'Nail biting'
+            text: 'Nail biting',
+            checked: false
           }
         ],
         type: 'checkbox',
         specialType: 'bubble'
       }
-    ]
+    ],
+    currentQuestion: 0
   },
-  reducers: {}
+  reducers: {
+    toggleChecked(state, action) {
+      const findQuestion = state.questions.find(
+        (question) => question.id === action.payload.id
+      );
+
+      const toggleOption = findQuestion.options[action.payload.index];
+
+      if (findQuestion.type === 'radio') {
+        findQuestion.options.map((option) => (option.checked = false));
+      }
+
+      toggleOption.checked = !toggleOption.checked;
+    }
+  }
 });
+
+export const { toggleChecked } = quizSlice.actions;
 
 export default quizSlice.reducer;

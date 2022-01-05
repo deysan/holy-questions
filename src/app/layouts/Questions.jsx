@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import QuestionTitle from '../components/QuestionTitle';
-import QuestionOptions from '../components/QuestionOptions';
-import QuestionButton from '../components/QuestionButton';
-import QuestionStatus from '../components/QuestionStatus';
+import Title from '../components/Title';
+import FormOptions from '../components/FormOptions';
+import Status from '../components/Status';
 
 const Questions = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -25,23 +24,28 @@ const Questions = () => {
     }
   };
 
+  const formPreventDefault = (event) => {
+    event.preventDefault();
+  };
+
   const question = questions[currentQuestion];
 
   return (
     <div className="question-page">
-      <QuestionStatus
+      <Status
         questions={questions}
         currentQuestion={currentQuestion}
         handlePrevQuestion={handlePrevQuestion}
       />
-      <QuestionTitle question={question} />
-      <QuestionOptions
+      <Title question={question} />
+      <FormOptions
         options={question.options}
         type={question.type}
         specialType={question?.specialType}
-        id={currentQuestion}
+        id={currentQuestion + 1}
+        handleNextQuestion={handleNextQuestion}
+        formPreventDefault={formPreventDefault}
       />
-      <QuestionButton handleNextQuestion={handleNextQuestion} />
     </div>
   );
 };
