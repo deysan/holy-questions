@@ -1,6 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory, Link } from 'react-router-dom';
+import { nextQuestion } from '../store/quizSlice';
 import Button from './Button';
 import OptionItem from './OptionItem';
 
@@ -11,11 +12,11 @@ const OptionsList = ({
   questionId,
   currentQuestion
 }) => {
-  const optionsQuestion = useSelector(
-    (state) => state.quiz.questions[currentQuestion].options
-  );
-
+  const questions = useSelector((state) => state.quiz.questions);
+  const optionsQuestion = questions[currentQuestion].options;
   const checkedOptions = optionsQuestion.filter((option) => option.checked);
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   let classButton = 'button-blue';
 
@@ -52,7 +53,12 @@ const OptionsList = ({
           <Button
             classButton={getClassButton()}
             typeButton={'submit'}
-            currentQuestion={currentQuestion}
+            linkButton={() => {
+              !getClassButton().includes('disabled') &&
+                (currentQuestion === questions.length - 1
+                  ? history.replace('/result')
+                  : dispatch(nextQuestion()));
+            }}
           />
           {specialType && (
             <Link className="button-skip" to="/result">
