@@ -25,6 +25,7 @@ const Questions = () => {
         optionsList={question.options}
         optionsType={question.type}
         specialType={question.specialType}
+        currentQuestion={currentQuestion}
       />
     </div>
   );
