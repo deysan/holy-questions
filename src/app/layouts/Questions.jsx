@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Title from '../components/Title';
-import OptionsList from '../components/OptionsList';
+import FormQuestions from '../components/FormQuestions';
 import Status from '../components/Status';
 
 const Questions = () => {
@@ -20,7 +20,7 @@ const Questions = () => {
         questionTitle={question.title}
         questionDescription={question.description}
       />
-      <OptionsList
+      <FormQuestions
         questionId={question.id}
         optionsList={question.options}
         optionsType={question.type}

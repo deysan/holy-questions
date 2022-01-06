@@ -1,77 +1,49 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, Link } from 'react-router-dom';
-import { nextQuestion } from '../store/quizSlice';
-import Button from './Button';
-import OptionItem from './OptionItem';
+import { useDispatch } from 'react-redux';
+import { nextQuestion, toggleChecked } from '../store/quizSlice';
+import Emoji from './Emoji';
 
 const OptionsList = ({
-  optionsList,
+  questionId,
   optionsType,
   specialType,
-  questionId,
-  currentQuestion
+  optionItem,
+  optionIndex
 }) => {
-  const questions = useSelector((state) => state.quiz.questions);
-  const optionsQuestion = questions[currentQuestion].options;
-  const checkedOptions = optionsQuestion.filter((option) => option.checked);
   const dispatch = useDispatch();
-  const history = useHistory();
 
-  let classButton = 'button-blue';
-
-  const getClassButton = () => {
-    if (!checkedOptions.length) {
-      return (classButton += ' disabled');
-    }
-    return classButton;
-  };
-
-  const getPreventDefault = (event) => {
-    event.preventDefault();
-  };
+  const optionName = optionItem.text.toLowerCase().split(' ').join('-');
 
   return (
-    <form
-      className={`question-form question-form-${questionId}`}
-      onSubmit={getPreventDefault}
-    >
-      <ul className={`options-list ${specialType || optionsType}`}>
-        {optionsList.map((optionItem, optionIndex) => (
-          <OptionItem
-            key={`option${optionIndex}`}
-            optionsType={optionsType}
-            specialType={specialType}
-            optionItem={optionItem}
-            optionIndex={optionIndex}
-            questionId={questionId}
-          />
-        ))}
-      </ul>
-      {optionsType === 'checkbox' && (
-        <div className="button-group">
-          <Button
-            classButton={getClassButton()}
-            typeButton={'submit'}
-            linkButton={() => {
-              !getClassButton().includes('disabled') &&
-                (currentQuestion === questions.length - 1
-                  ? history.replace('/results')
-                  : dispatch(nextQuestion()));
-            }}
-          />
-          {specialType && (
-            <Link
-              className="button-skip"
-              to="#"
-              onClick={() => history.replace('/results')}
-            >
-              Skip
-            </Link>
-          )}
-        </div>
-      )}
-    </form>
+    <li key={optionIndex} className="options-item">
+      <input
+        id={`question${questionId}-option${optionIndex}`}
+        className={`options-input options-input-${
+          specialType || optionsType
+        } visually-hidden`}
+        name={optionsType === 'checkbox' ? optionName : `question${questionId}`}
+        type={optionsType}
+        value={optionsType === 'radio' && optionName}
+        checked={optionItem.checked}
+        onChange={() => dispatch(toggleChecked({ questionId, optionIndex }))}
+        onClick={() => {
+          optionsType === 'radio' && dispatch(nextQuestion());
+        }}
+      />
+      <label htmlFor={`question${questionId}-option${optionIndex}`}>
+        {optionItem.icon && (
+          <Emoji label={optionItem.label} icon={optionItem.icon} />
+        )}
+        {optionItem.textOf ? (
+          <span className="text-bold">
+            <span className="text-blue">{optionItem.text} / </span>
+            {optionItem.textOf}
+          </span>
+        ) : (
+          <>{optionItem.text}</>
+        )}
+      </label>
+    </li>
   );
 };
 

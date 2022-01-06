@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = ({ classButton, typeButton, linkButton }) => {
+const Button = ({ textButton, classButton, typeButton, linkButton }) => {
   return (
     <>
       <button
@@ -8,7 +8,7 @@ const Button = ({ classButton, typeButton, linkButton }) => {
         type={typeButton}
         onClick={linkButton}
       >
-        Next
+        {textButton}
       </button>
     </>
   );
