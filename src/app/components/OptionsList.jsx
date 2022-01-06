@@ -56,12 +56,16 @@ const OptionsList = ({
             linkButton={() => {
               !getClassButton().includes('disabled') &&
                 (currentQuestion === questions.length - 1
-                  ? history.replace('/result')
+                  ? history.replace('/results')
                   : dispatch(nextQuestion()));
             }}
           />
           {specialType && (
-            <Link className="button-skip" to="/result">
+            <Link
+              className="button-skip"
+              to="#"
+              onClick={() => history.replace('/results')}
+            >
               Skip
             </Link>
           )}

@@ -42,24 +42,9 @@ body {
   background-color: $white;
 }
 
-.question-page {
-  @include container();
-  display: flex;
-  flex-direction: column;
-  min-width: 320px;
-  min-height: 100vh;
-  max-width: $desktop;
-  margin: 0 auto;
-  color: $dark;
-  font-family: 'Poppins', sans-serif;
-  background-color: $color-bg;
-  box-shadow: 0 5px 15px 0 rgba($dark, 0.2);
-  box-sizing: border-box;
-}
-
 .button {
   display: inline-block;
-  width: 100%;
+  width: 320px;
   margin: 10px 0;
   padding: 10px 30px;
   font: inherit;
@@ -71,10 +56,6 @@ body {
   box-shadow: 2px 5px 10px rgba(#6d62e5, 0.2);
   cursor: pointer;
   user-select: none;
-
-  @media (min-width: $desktop) {
-    max-width: 320px;
-  }
 
   &:hover {
     opacity: 0.85;
@@ -104,6 +85,18 @@ body {
 
   &-orange {
     background-color: $color-orange;
+  }
+
+  &-skip {
+    color: rgba($dark, 0.4);
+    text-decoration: none;
+  }
+
+  &-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -139,6 +132,21 @@ body {
       border-color: rgba($dark, 1);
     }
   }
+}
+
+.question-page {
+  @include container();
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+  max-width: $desktop;
+  margin: 0 auto;
+  color: $dark;
+  font-family: 'Poppins', sans-serif;
+  background-color: $color-bg;
+  box-shadow: 0 5px 15px 0 rgba($dark, 0.2);
+  box-sizing: border-box;
 }
 
 .question-title {
