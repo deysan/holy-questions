@@ -1,13 +1,14 @@
 import React from 'react';
 
-const Emoji = ({ label, icon }) => (
+const Emoji = ({ label, icon, nospace }) => (
   <span
     className="emoji"
     role="img"
     aria-label={label ? label : ''}
     aria-hidden={label ? 'false' : 'true'}
   >
-    {`${icon} `}
+    {`${icon}`}
+    {nospace ? `` : ` `}
   </span>
 );
 export default Emoji;
