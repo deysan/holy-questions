@@ -188,7 +188,6 @@ body {
 
 .options-list {
   @include list-reset();
-  font-size: 15px;
   width: 100%;
   margin-top: 10px;
 
@@ -214,6 +213,7 @@ body {
     position: relative;
     display: block;
     padding: 10px 0;
+    line-height: 20px;
     cursor: pointer;
     user-select: none;
   }
@@ -227,7 +227,7 @@ body {
   & + label::before {
     content: '';
     position: absolute;
-    top: 7px;
+    top: 9px;
     left: 0;
     width: 21px;
     height: 21px;
@@ -258,7 +258,7 @@ body {
   &:checked + label::after {
     content: '';
     position: absolute;
-    top: 12px;
+    top: 14px;
     left: 8px;
     width: 5px;
     height: 9px;
