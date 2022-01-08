@@ -3,6 +3,14 @@ import { useLocation } from 'react-router-dom';
 import Timer from '../components/Timer';
 import Button from '../components/Button';
 import Emoji from '../components/Emoji';
+import logoApplepay from '../../img/logo-applepay.png';
+import logoDinersclub from '../../img/logo-dinersclub.png';
+import logoDiscover from '../../img/logo-discover.png';
+import logoGpay from '../../img/logo-gpay.png';
+import logoMastercard from '../../img/logo-mastercard.png';
+import logoPaypal from '../../img/logo-paypal.png';
+import logoVisa from '../../img/logo-visa.png';
+import mountainPeople from '../../img/mountain-people.png';
 
 const Results = () => {
   const { pathname } = useLocation();
@@ -97,7 +105,7 @@ const Results = () => {
           <span className="text-blue">was created:</span>
         </h2>
         <ol>
-          <li className="card-item plan">
+          <li className="card-item plan partners">
             More than 1500 books and articles analyzed to choose the best
           </li>
           <li className="card-item plan">
@@ -114,7 +122,7 @@ const Results = () => {
           More <span className="text-blue">than 2 mln</span> people are building
           habits with our plan
         </h2>
-        <div className="people-avatars">people-avatars</div>
+        <img src={mountainPeople} alt="Mountain People" />
         <Button
           textButton={'Get my habit plan'}
           classButton={'button-blue'}
@@ -124,10 +132,10 @@ const Results = () => {
       <section className="section-inside">
         <h2 className="section-title">What’s inside:</h2>
         <div className="card-group-big">
-          <div className="card-item inside">
+          <div className="card-item inside-1">
             Personalized plan on habits transformation: tools & strategies
           </div>
-          <div className="card-item inside">
+          <div className="card-item inside-2">
             Habit tracker with challenges set for topics you choose
           </div>
         </div>
@@ -162,7 +170,8 @@ const Results = () => {
       </section>
       <section className="section-guarantee">
         <h3 className="section-title">
-          100% money-back <span className="text-blue">guarantee</span>
+          100% money-back <span className="text-blue">guarantee </span>
+          <Emoji label={'money_with_wings'} icon={'💸'} nospace />
         </h3>
         <div className="section-description">
           <p>
@@ -175,13 +184,27 @@ const Results = () => {
       <section className="section-pay">
         <h4 className="section-title">Pay safe & secure</h4>
         <ul className="logos-list">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
+          <li>
+            <img src={logoMastercard} alt="Mastercard" />
+          </li>
+          <li>
+            <img src={logoVisa} alt="Visa" />
+          </li>
+          <li>
+            <img src={logoPaypal} alt="Paypal" />
+          </li>
+          <li>
+            <img src={logoDiscover} alt="Discover" />
+          </li>
+          <li>
+            <img src={logoDinersclub} alt="Dinersclub" />
+          </li>
+          <li>
+            <img src={logoApplepay} alt="Applepay" />
+          </li>
+          <li>
+            <img src={logoGpay} alt="Gpay" />
+          </li>
         </ul>
         <ul className="links-list">
           <li>Contact Us</li>
