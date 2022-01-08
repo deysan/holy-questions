@@ -35,6 +35,11 @@ $desktop: 960px;
   list-style: none;
 }
 
+@mixin font-set($font-size, $font-weight) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -64,6 +69,7 @@ body {
   font: inherit;
   text-align: center;
   color: $white;
+  @include font-set(16px, 500);
   background-color: $color-blue;
   border: none;
   border-radius: 25px;
@@ -172,17 +178,17 @@ body {
 }
 
 .question-title {
-  // font-size: 24px;
-  font-weight: 600;
+  @include font-set(24px, 600);
 }
 
 .question-description {
-  // font-size: 15px;
+  @include font-set(15px, 400);
+  color: rgba($dark, 0.9);
 }
 
 .options-list {
   @include list-reset();
-  // font-size: 15px;
+  font-size: 15px;
   width: 100%;
   margin-top: 10px;
 
@@ -294,8 +300,7 @@ body {
     margin-right: 10px;
     width: 100px;
     height: 100px;
-
-    font-size: 13px;
+    @include font-set(13px, 500);
     text-align: center;
     border-radius: 50%;
     box-sizing: border-box;
@@ -380,8 +385,13 @@ body {
 .section-title {
   margin: 0;
   margin-bottom: 30px;
-  // font-size: 26px;
+  @include font-set(26px, 600);
   text-align: center;
+}
+
+.section-description {
+  text-align: center;
+  color: rgba($dark, 0.9);
 }
 
 .section-forecast {
@@ -449,8 +459,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 50px;
-    font-weight: 600;
+    @include font-set(50px, 600);
     color: $color-green;
   }
 }
@@ -585,8 +594,8 @@ body {
         height: 25px;
         color: $white;
         text-align: center;
-        line-height: 26px;
         font-size: 14px;
+        line-height: 26px;
         border-radius: 50%;
         background: $color-blue;
         outline: none;
@@ -636,8 +645,7 @@ body {
 
   & .card-item {
     padding: 25px 50px 25px 150px;
-    font-size: 15px;
-    font-weight: 500;
+    @include font-set(15px, 500);
     background-color: #fbebb3;
     background-position: -15px -10px;
     background-repeat: no-repeat;
@@ -690,8 +698,7 @@ body {
     font-size: 40px;
 
     & sup {
-      font-size: 18px;
-      font-weight: 400;
+      @include font-set(18px, 400);
       color: rgba($dark, 0.5);
       text-decoration: line-through;
     }
@@ -699,6 +706,10 @@ body {
 }
 
 .section-guarantee {
+  & .section-title {
+    font-size: 25px;
+  }
+
   & .section-description {
     display: flex;
     flex-direction: column;
@@ -709,12 +720,6 @@ body {
       flex-direction: row;
       padding: 0;
     }
-
-    & > p {
-      &:nth-child(2n-1) {
-        margin-right: 30px;
-      }
-    }
   }
 
   & p {
@@ -722,6 +727,10 @@ body {
     font-weight: 500;
     text-align: center;
     color: rgba($dark, 0.7);
+
+    &:nth-child(2n-1) {
+      margin-right: 30px;
+    }
 
     @media (min-width: $tablet) {
       text-align: left;
@@ -732,6 +741,7 @@ body {
 .section-pay {
   & .section-title {
     margin-bottom: 15px;
+    font-size: 14px;
   }
 
   & .logos-list,
@@ -753,8 +763,7 @@ body {
   }
 
   & .links-list li {
-    font-size: 12px;
-    font-weight: 500;
+    @include font-set(12px, 500);
     text-decoration: underline;
     cursor: pointer;
   }
@@ -811,6 +820,7 @@ body {
 }
 
 .card-title {
+  @include font-set(18px, 600);
   text-align: center;
 
   & > .emoji {
