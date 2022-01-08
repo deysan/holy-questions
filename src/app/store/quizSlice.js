@@ -384,10 +384,16 @@ const quizSlice = createSlice({
       if (prevQuestion >= 0) {
         state.currentQuestion = prevQuestion;
       }
+    },
+    uncheckedQuestion(state) {
+      state.questions[state.currentQuestion].options.map(
+        (option) => (option.checked = false)
+      );
     }
   }
 });
 
-export const { toggleChecked, nextQuestion, prevQuestion } = quizSlice.actions;
+export const { toggleChecked, nextQuestion, prevQuestion, uncheckedQuestion } =
+  quizSlice.actions;
 
 export default quizSlice.reducer;

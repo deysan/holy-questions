@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, Link } from 'react-router-dom';
-import { nextQuestion } from '../store/quizSlice';
+import { nextQuestion, uncheckedQuestion } from '../store/quizSlice';
 import Button from './Button';
 import OptionsList from './OptionsList';
 
@@ -61,7 +61,10 @@ const FormQuestions = ({
             <Link
               className="button-skip"
               to="#"
-              onClick={() => history.replace('/results')}
+              onClick={() => {
+                dispatch(uncheckedQuestion());
+                return history.replace('/results');
+              }}
             >
               Skip
             </Link>

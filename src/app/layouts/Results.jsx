@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Timer from '../components/Timer';
 import Button from '../components/Button';
 import Emoji from '../components/Emoji';
@@ -14,6 +15,29 @@ import mountainPeople from '../../img/mountain-people.png';
 
 const Results = () => {
   const { pathname } = useLocation();
+  const question = useSelector((state) => state.quiz.questions);
+
+  const getOption = (numberQuestion) => {
+    const indexOption = question[numberQuestion - 1].options.findIndex(
+      (option) => option.checked
+    );
+
+    return question[numberQuestion - 1].options[indexOption].text;
+  };
+
+  const getCountOptions = (numberQuestion) => {
+    let countOptions = 1;
+
+    const filterOptions = question[numberQuestion - 1].options.filter(
+      (option) => option.checked
+    );
+
+    if (filterOptions.length > 0) {
+      countOptions = filterOptions.length;
+    }
+
+    return countOptions;
+  };
 
   return (
     <div className="results-page">
@@ -40,13 +64,15 @@ const Results = () => {
             <div className="card-item bad-habits">
               <p>Old bad habits</p>
               <b>
-                <span className="text-orange">-4 habits</span>
+                <span className="text-orange">
+                  -{getCountOptions(12)} habits
+                </span>
               </b>
             </div>
             <div className="card-item timing-goal">
               <p>Timing goal</p>
               <b>
-                10 min / <span className="text-blue">day</span>
+                {getOption(9)} / <span className="text-blue">day</span>
               </b>
             </div>
           </div>
