@@ -41,20 +41,34 @@ const Results = () => {
 
   return (
     <div className="results-page">
+      <h1 className="result-title visually-hidden">Quiz results</h1>
       <div className="section-result">
         <div className="top-bar">
-          <h1 className="result-title visually-hidden">Quiz results</h1>
-          <Timer time={60} />
-          <Button
-            textButton={'Get my plan'}
-            classButton={'button-blue button-top-bar'}
-            typeButton={'button'}
-            linkButton={() => (window.location.href = `${pathname}#price`)}
-          />
+          <div className="section-timer">
+            <Timer time={60} />
+          </div>
+          <div className="section-button">
+            <Button
+              textButton={'Get my plan'}
+              classButton={'button-blue'}
+              typeButton={'button'}
+              linkButton={() => (window.location.href = `${pathname}#price`)}
+            />
+          </div>
         </div>
         <section className="section-forecast">
           <h2 className="section-title">Forecast based on your answers</h2>
           <div className="card-item calendar">
+            <ol className="calendar-week">
+              <li className="calendar-day">Mon</li>
+              <li className="calendar-day">Thu</li>
+              <li className="calendar-day">Wed</li>
+              <li className="calendar-day">Thu</li>
+              <li className="calendar-day">Fri</li>
+              <li className="calendar-day">Sat</li>
+              <li className="calendar-day selected">Sun</li>
+            </ol>
+            <b className="question-answer">{getCountOptions(12)}</b>
             <h3 className="card-title">
               Super powerful habits <span className="text-blue">In 7 days</span>
               , you will already get

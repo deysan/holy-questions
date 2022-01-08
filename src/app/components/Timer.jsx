@@ -22,10 +22,10 @@ const Timer = ({ time = 599 }) => {
   });
 
   return (
-    <div className="section-timer">
+    <>
       <h5>Special offer expires in</h5>
       <b className="timer text-blue">{updateTimeLeft(timeLeft)}</b>
-    </div>
+    </>
   );
 };
 
