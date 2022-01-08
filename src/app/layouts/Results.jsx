@@ -20,7 +20,7 @@ const Results = () => {
       <div className="section-result">
         <div className="top-bar">
           <h1 className="result-title visually-hidden">Quiz results</h1>
-          <Timer />
+          <Timer time={60} />
           <Button
             textButton={'Get my plan'}
             classButton={'button-blue button-top-bar'}
