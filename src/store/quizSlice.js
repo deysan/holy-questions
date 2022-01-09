@@ -6,9 +6,9 @@ const quizSlice = createSlice({
     questions: [
       {
         id: 1,
-        title: "The checklist you can't do without!",
+        title: 'The checklist you can’t do without!',
         description:
-          "Let's make your checklist plan. Opt for your goals to get excited:",
+          'Let’s make your checklist plan. Opt for your goals to get excited:',
         options: [
           {
             text: 'Perform cleaning',
@@ -198,7 +198,7 @@ const quizSlice = createSlice({
             checked: false
           },
           {
-            text: "I don't know",
+            text: 'I don’t know',
             checked: false
           }
         ],
@@ -315,7 +315,7 @@ const quizSlice = createSlice({
       },
       {
         id: 12,
-        title: "Are there any habits you'd like to quit?",
+        title: 'Are there any habits you’d like to quit?',
         description: null,
         options: [
           {

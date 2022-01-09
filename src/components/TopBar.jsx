@@ -7,7 +7,7 @@ const TopBar = () => {
   const { pathname } = useLocation();
 
   return (
-    <div className="top-bar">
+    <div id="top-bar" className="top-bar">
       <div className="section-timer">
         <Timer time={60} />
       </div>

@@ -35,14 +35,13 @@ const OptionsList = ({
         {optionItem.icon && (
           <Emoji label={optionItem.label} icon={optionItem.icon} />
         )}
-        {optionItem.textOf ? (
+        {optionItem.textOf && (
           <span className="text-bold">
             <span className="text-blue">{optionItem.text} / </span>
             {optionItem.textOf}
           </span>
-        ) : (
-          <>{optionItem.text}</>
         )}
+        {!optionItem.textOf && optionItem.text}
       </label>
     </li>
   );
