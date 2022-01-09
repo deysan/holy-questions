@@ -12,6 +12,7 @@ import logoMastercard from '../../img/logo-mastercard.png';
 import logoPaypal from '../../img/logo-paypal.png';
 import logoVisa from '../../img/logo-visa.png';
 import mountainPeople from '../../img/mountain-people.png';
+import HabitList from '../components/HabitsList';
 
 const Results = () => {
   const { pathname } = useLocation();
@@ -119,7 +120,9 @@ const Results = () => {
         <p className="section-description">
           Habits bring you system to change, either good or bad
         </p>
-        <div className="habits-animation">habits-animation</div>
+        <div className="habits-list">
+          <HabitList />
+        </div>
       </section>
       <section className="section-teach">
         <h2 className="section-title">
