@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { nextQuestion, toggleChecked } from 'store/quizSlice';
 import Emoji from './Emoji';
+import PropTypes from 'prop-types';
 
 const OptionsList = ({
   questionId,
@@ -45,6 +46,14 @@ const OptionsList = ({
       </label>
     </li>
   );
+};
+
+OptionsList.propTypes = {
+  questionId: PropTypes.number.isRequired,
+  optionsType: PropTypes.string.isRequired,
+  specialType: PropTypes.string,
+  optionItem: PropTypes.object.isRequired,
+  optionIndex: PropTypes.number.isRequired
 };
 
 export default OptionsList;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 const Timer = ({ time = 599 }) => {
   const [timeLeft, setTimeLeft] = useState(time);
@@ -27,6 +28,10 @@ const Timer = ({ time = 599 }) => {
       <b className="timer text-blue">{updateTimeLeft(timeLeft)}</b>
     </>
   );
+};
+
+Timer.propTypes = {
+  time: PropTypes.number.isRequired
 };
 
 export default Timer;

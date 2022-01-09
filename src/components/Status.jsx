@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { prevQuestion } from 'store/quizSlice';
+import PropTypes from 'prop-types';
 
 const Status = ({ currentQuestion, allQuestions }) => {
   const dispatch = useDispatch();
@@ -21,6 +22,11 @@ const Status = ({ currentQuestion, allQuestions }) => {
       )}
     </div>
   );
+};
+
+Status.propTypes = {
+  currentQuestion: PropTypes.number.isRequired,
+  allQuestions: PropTypes.number.isRequired
 };
 
 export default Status;

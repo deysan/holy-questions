@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const style = {
   fontSize: '20px'
@@ -16,4 +17,11 @@ const Emoji = ({ label, icon, nospace }) => (
     {nospace ? `` : ` `}
   </span>
 );
+
+Emoji.propTypes = {
+  label: PropTypes.string,
+  icon: PropTypes.string.isRequired,
+  nospace: PropTypes.bool
+};
+
 export default Emoji;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Title = ({ questionTitle, questionDescription }) => {
   return (
@@ -9,6 +10,11 @@ const Title = ({ questionTitle, questionDescription }) => {
       )}
     </>
   );
+};
+
+Title.propTypes = {
+  questionTitle: PropTypes.string.isRequired,
+  questionDescription: PropTypes.string
 };
 
 export default Title;

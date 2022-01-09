@@ -4,6 +4,7 @@ import { useHistory, Link } from 'react-router-dom';
 import { nextQuestion, uncheckedQuestion } from 'store/quizSlice';
 import Button from './Button';
 import OptionsList from './OptionsList';
+import PropTypes from 'prop-types';
 
 const FormQuestions = ({
   optionsList,
@@ -73,6 +74,14 @@ const FormQuestions = ({
       )}
     </form>
   );
+};
+
+FormQuestions.propTypes = {
+  optionsList: PropTypes.array.isRequired,
+  optionsType: PropTypes.string.isRequired,
+  specialType: PropTypes.string,
+  questionId: PropTypes.number.isRequired,
+  currentQuestion: PropTypes.number.isRequired
 };
 
 export default FormQuestions;
