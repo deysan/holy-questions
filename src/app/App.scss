@@ -389,7 +389,8 @@ body {
     @include container-section();
   }
 
-  & > section:not(.section-price, .section-pay) {
+  &
+    > section:not(.section-forecast, .section-charts, .section-price, .section-pay) {
     margin-top: 30px;
   }
 }
@@ -414,11 +415,6 @@ body {
   }
 }
 
-.section-result {
-  margin-bottom: 30px;
-  background-color: #fef7ed;
-}
-
 .section-timer,
 .section-button {
   flex: 1 0 0;
@@ -436,6 +432,7 @@ body {
 .section-title {
   margin: 0;
   margin-bottom: 30px;
+
   @include font-set(26px, 600);
   text-align: center;
 }
@@ -447,7 +444,8 @@ body {
 
 .section-forecast {
   @include container-section();
-  padding-top: 80px;
+  padding-top: 100px;
+  background-color: #fef7ed;
 
   @media (min-width: $desktop) {
     padding-top: 100px;
@@ -516,18 +514,22 @@ body {
 }
 
 .section-charts {
+  margin-bottom: 30px;
+  padding-top: 10px;
+  background-color: #fef7ed;
+
   & .card-item {
     padding-right: 45px;
     height: 215px;
     background-repeat: no-repeat;
 
     &.skill {
-      background-image: url('../img/chart-skill.png');
+      background-image: url('../images/chart-skill.png');
       background-position: center 20px;
     }
 
     &.level {
-      background-image: url('../img/chart-level.png');
+      background-image: url('../images/chart-level.png');
       background-position: center 10px;
     }
   }
@@ -581,7 +583,7 @@ body {
     margin: 0;
     padding-top: 300px;
     background-color: #fef7ed;
-    background-image: url('../img/paper-teach.png');
+    background-image: url('../images/paper-teach.png');
     background-position: center 10px;
     background-repeat: no-repeat;
 
@@ -624,6 +626,10 @@ body {
 }
 
 .section-plan {
+  .section-title {
+    text-align: left;
+  }
+
   & .card-item {
     margin-bottom: 15px;
     background-color: #f5faf7;
@@ -677,8 +683,8 @@ body {
 
       &.partners {
         padding-top: 80px;
-        background-image: url('../img/logo-wsj.png'),
-          url('../img/logo-amazon.png'), url('../img/logo-nyt.png');
+        background-image: url('../images/logo-wsj.png'),
+          url('../images/logo-amazon.png'), url('../images/logo-nyt.png');
         background-position: 25px 25px, 80px 12px, 210px 18px;
         background-repeat: no-repeat;
       }
@@ -711,11 +717,11 @@ body {
     background-repeat: no-repeat;
 
     &.inside-1 {
-      background-image: url('../img/paper-inside-1.png');
+      background-image: url('../images/paper-inside-1.png');
     }
 
     &.inside-2 {
-      background-image: url('../img/paper-inside-2.png');
+      background-image: url('../images/paper-inside-2.png');
     }
   }
 
@@ -735,7 +741,7 @@ body {
         left: 0;
         width: 20px;
         height: 20px;
-        background-image: url('../img/icon-star.png');
+        background-image: url('../images/icon-star.png');
       }
 
       &:last-child {

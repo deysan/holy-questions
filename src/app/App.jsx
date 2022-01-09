@@ -1,8 +1,8 @@
 import './App.scss';
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Questions from './layouts/Questions';
-import Results from './layouts/Results';
+import Questions from 'pages/Questions';
+import Results from 'pages/Results';
 
 function App() {
   return (
@@ -15,4 +15,4 @@ function App() {
   );
 }
 
-export default App;
+export { App };

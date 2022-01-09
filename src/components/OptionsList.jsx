@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { nextQuestion, toggleChecked } from '../store/quizSlice';
+import { nextQuestion, toggleChecked } from 'store/quizSlice';
 import Emoji from './Emoji';
 
 const OptionsList = ({

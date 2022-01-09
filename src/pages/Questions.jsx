@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Title from '../components/Title';
-import FormQuestions from '../components/FormQuestions';
-import Status from '../components/Status';
+import Title from 'components/Title';
+import FormQuestions from 'components/FormQuestions';
+import Status from 'components/Status';
 
 const Questions = () => {
   const questions = useSelector((state) => state.quiz.questions);

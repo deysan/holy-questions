@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { prevQuestion } from '../store/quizSlice';
+import { prevQuestion } from 'store/quizSlice';
 
 const Status = ({ currentQuestion, allQuestions }) => {
   const dispatch = useDispatch();
