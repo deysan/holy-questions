@@ -78,8 +78,10 @@ body {
   cursor: pointer;
   user-select: none;
 
-  &:hover {
-    opacity: 0.85;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      opacity: 0.85;
+    }
   }
 
   &:active {
@@ -182,10 +184,12 @@ body {
     transform: rotate(45deg);
   }
 
-  &:hover {
-    color: rgba($dark, 1);
-    &::before {
-      border-color: rgba($dark, 1);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: rgba($dark, 1);
+      &::before {
+        border-color: rgba($dark, 1);
+      }
     }
   }
 }
@@ -281,13 +285,20 @@ body {
     outline: none;
   }
 
-  &:hover + label,
+  @media (hover: hover) and (pointer: fine) {
+    &:hover + label {
+      color: $color-blue;
+    }
+  }
+
   &:checked + label {
     color: $color-blue;
   }
 
-  &:hover + label::before {
-    border-color: $color-blue;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover + label::before {
+      border-color: $color-blue;
+    }
   }
 
   &:checked + label::before {
@@ -295,8 +306,10 @@ body {
     border-color: $color-blue;
   }
 
-  &:checked:hover + label::before {
-    border-color: $color-outline;
+  @media (hover: hover) and (pointer: fine) {
+    &:checked:hover + label::before {
+      border-color: $color-outline;
+    }
   }
 
   &:checked + label::after {
@@ -327,15 +340,19 @@ body {
     box-shadow: inset 0px 0px 0px 2px $color-blue;
   }
 
-  &:hover + label {
-    padding: 18px;
-    background-color: #f1f6ff;
-    border: 2px dashed $color-blue;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover + label {
+      padding: 18px;
+      background-color: #f1f6ff;
+      border: 2px dashed $color-blue;
+    }
   }
 
-  &:checked:hover + label {
-    padding: 19px;
-    border-width: 1px;
+  @media (hover: hover) and (pointer: fine) {
+    &:checked:hover + label {
+      padding: 19px;
+      border-width: 1px;
+    }
   }
 }
 
