@@ -236,8 +236,16 @@ body {
   }
 
   &.bubble {
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
+
+    @media (min-width: $tablet) {
+      width: 80%;
+    }
     & > .options-item {
       flex-wrap: wrap;
     }
