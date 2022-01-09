@@ -66,7 +66,7 @@ body {
   width: 100%;
   max-width: 320px;
   margin: 10px 0;
-  padding: 15px 30px;
+  padding: 15px;
   font: inherit;
   text-align: center;
   color: $white;
@@ -123,7 +123,6 @@ body {
   }
 
   &-habit {
-    padding: 15px;
     min-width: max-content;
     @include font-set(15px, 400);
     line-height: 20px;
