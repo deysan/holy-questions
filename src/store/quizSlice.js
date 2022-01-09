@@ -58,22 +58,23 @@ const quizSlice = createSlice({
       {
         id: 2,
         title: 'This is a test question',
-        description: 'Just click "Next"',
+        description:
+          'Please, pick up any answer, it will not affect the final result.',
         options: [
           {
-            text: 'Next question',
+            text: 'Option 1',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 2',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 3',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 4',
             checked: false
           }
         ],
@@ -82,22 +83,23 @@ const quizSlice = createSlice({
       {
         id: 3,
         title: 'This is a test question',
-        description: 'Just click "Next"',
+        description:
+          'Please, pick up any answer, it will not affect the final result.',
         options: [
           {
-            text: 'Next question',
+            text: 'Option 1',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 2',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 3',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 4',
             checked: false
           }
         ],
@@ -106,22 +108,23 @@ const quizSlice = createSlice({
       {
         id: 4,
         title: 'This is a test question',
-        description: 'Just click "Next"',
+        description:
+          'Please, pick up any answer, it will not affect the final result.',
         options: [
           {
-            text: 'Next question',
+            text: 'Option 1',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 2',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 3',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 4',
             checked: false
           }
         ],
@@ -130,46 +133,48 @@ const quizSlice = createSlice({
       {
         id: 5,
         title: 'This is a test question',
-        description: 'Just click "Next"',
+        description:
+          'Please, pick up any answer, it will not affect the final result.',
         options: [
           {
-            text: 'Next question',
+            text: 'Option 1',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 2',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 3',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 4',
             checked: false
           }
         ],
-        type: 'radio'
+        type: 'checkbox'
       },
       {
         id: 6,
         title: 'This is a test question',
-        description: 'Just click "Next"',
+        description:
+          'Please, pick up any answer, it will not affect the final result.',
         options: [
           {
-            text: 'Next question',
+            text: 'Option 1',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 2',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 3',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 4',
             checked: false
           }
         ],
@@ -268,22 +273,23 @@ const quizSlice = createSlice({
       {
         id: 10,
         title: 'This is a test question',
-        description: 'Just click "Next"',
+        description:
+          'Please, pick up any answer, it will not affect the final result.',
         options: [
           {
-            text: 'Next question',
+            text: 'Option 1',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 2',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 3',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 4',
             checked: false
           }
         ],
@@ -292,22 +298,23 @@ const quizSlice = createSlice({
       {
         id: 11,
         title: 'This is a test question',
-        description: 'Just click "Next"',
+        description:
+          'Please, pick up any answer, it will not affect the final result.',
         options: [
           {
-            text: 'Next question',
+            text: 'Option 1',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 2',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 3',
             checked: false
           },
           {
-            text: 'Next question',
+            text: 'Option 4',
             checked: false
           }
         ],
